@@ -20,6 +20,20 @@
 		
 		
 	</style>
+
+	<script>
+  function myFunction82() {
+    
+    if(document.getElementById("mySelect").value.length>0)
+    {
+    a178 = "statistics.php?sem="+ document.getElementById("mySelect").value;
+    window.location.assign(a178);
+  }
+
+   
+}
+  </script>
+
   </head>
 
 <body id="page-top">
@@ -31,13 +45,14 @@
          <div class="row">
            <div class="col-lg-8 mx-auto">
              <h3><?php echo getTitle(); ?></h3>
-
+               <h6>(Click on the regions present in the pie chart to know year wise batch count)</h6>
 
 <table border="0" cellspacing="60">
 <tr>
 <td><div id="piechart"></div></td>
 <td>
-<table align="right" border="0">
+<select id="mySelect" onchange="myFunction82()" >
+  <option value="">Select a semester</option>
 <?php
 $sems=array("Jan-May 2018 Round 1","Jan-May 2018 Round 2","July-Nov 2017 Round 1","July-Nov 2017 Round 2","Jan-May 2017","July-Nov 2016");
 $arrlength = count($sems);
@@ -47,22 +62,15 @@ $arrlength = count($sems);
 
 for($x = 0; $x < $arrlength; $x++)
 {
-if($sems[$x]===$_GET["sem"])
-{
-	
- echo "<tr><td>$sems[$x]</td></tr>";
-}
-else
-{
 ?>
-<tr>
-<td><a href="statistics.php?sem=<?php echo $sems[$x] ?>"><?php echo $sems[$x] ?></a></td>
-</tr>
+<option value="<?php echo $sems[$x] ?>"> <?php echo $sems[$x] ?> </option>
 <?php
+
+
 }
-}
+
 ?>
-</table>
+</select>
 </td>
 </tr>
 </table>
@@ -189,7 +197,7 @@ if (($handle = fopen("$sem.csv", "r")) !== FALSE) {
 $count=0;
 for($i=0;$i<$c2;$i++)
 {
-	if(strcmp($cname,'others')===0)
+	if(strcmp($cname,'Proffessional Electives')===0)
 	{
 	  if(strpos($courseid[$i],'HS')===0 or strpos($courseid[$i],'MA')===0)
 	  continue;
@@ -250,7 +258,7 @@ $count16=0;
 $count17=0;
 for($i=0;$i<$c2;$i++)
 {
-	if(strcmp($cname,'others')===0)
+	if(strcmp($cname,'Proffessional Electives')===0)
 	{
 	  if(strpos($courseid[$i],'HS')===0 or strpos($courseid[$i],'MA')===0)
 	  continue;
