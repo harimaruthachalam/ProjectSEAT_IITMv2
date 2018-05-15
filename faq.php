@@ -81,7 +81,7 @@
 									possible that for some courses the Permanent Information is not
 									up to date. We encourage departments to get this information in
 									place for the benefit of the students. However since changing
-									Permanent information requires approvals, workflow has enabled
+									“Permanent Information” requires approvals, workflow has enabled
 									a short-cut to updating course description and prerequisites
 									for the current offering of the course. It should be noted that
 									prerequisites entered using this shortcut will not be enforced,
@@ -149,7 +149,7 @@
 										SEAT?</a></p>
 										<div id="collapseOne5" class="collapse" role="tabpanel"
 										aria-labelledby="headingOne">
-									For this, we do not have a clear answer. We request departments
+									 We request departments
 									to take a call based on historical data. Going forward, as a
 									larger set of students fall under the purview of SEAT, we
 									expect that the estimation will become easier.<br />
@@ -198,7 +198,7 @@ href="#collapseOne7" aria-expanded="false" aria-controls="collapseOne7">What abo
 href="#collapseOne8" aria-expanded="false" aria-controls="collapseOne8">What are different ranking
 										criteria?</a></p>
 									<div id="collapseOne8" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-									Please see Question in Student FAQ (Reference to Page-5) for a
+									Please refer to a similar question in Student FAQ section, for a
 									detailed description of various ranking criteria. We expect the
 									departments to provide us with ranking criteria for courses
 									offered in each semester. The default is set to Stratified
@@ -209,7 +209,7 @@ href="#collapseOne8" aria-expanded="false" aria-controls="collapseOne8">What are
 href="#collapseOne9" aria-expanded="false" aria-controls="collapseOne9">How is ranking criteria different
 										from pre-requisites?</a></p>
 										<div id="collapseOne9" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-									Please see Question in Student FAQ<br />
+									Please refer to similar question in Student FAQ section. <br />
 									<br />
 									</div>
 								</div>
@@ -235,11 +235,12 @@ aria-expanded="false" aria-controls="collapseTwo1">What are inputs to SEAT?</a><
 									semester, should submit the following:
 									<ol>
 										<li>The maximum number of credits (including both
-											elective and core credits, default is 60) he/she wants to
+											elective and core credits, default is 63) he/she wants to
 											register for in the particular semester, and</li>
-										<li>An exhaustive list of courses in an order of
-											preference.</li>
-										<li>A colour for each course</li>
+										<li>An exhaustive list of courses with preference order.
+</li>
+										<li>Each course must have a color code. Only one course from every color group will be allotted to the student. 
+</li>
 									</ol>
 									<br />
 									<br />
@@ -268,27 +269,24 @@ aria-expanded="false" aria-controls="collapseTwo3">How do I form my preference l
 									that you wish to give a preference for. Your preference list
 									can contain multiple courses in the same slot. The SEAT
 									software will ensure that you do not have any slot conflicts.
-									Next, you have to colour code the courses in your preference
-									list.<br />
+									Next, you have to color code the courses in your preference
+									list.Only one course from each color group will be allotted. “No color code (0) ” is default option. Course with “No color code (black color)” will be treated as individual sets.
+<br />
 									<br />
 									</div>
 									<p class="text-primary"><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo4"
-aria-expanded="false" aria-controls="collapseTwo4">What is a colour for a course in
+aria-expanded="false" aria-controls="collapseTwo4">What is a color for a course in
 										the student’s preference list?</a></p>
 								<div id="collapseTwo4" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
 									Students may have a subset of courses in their preference list
-									from which they wish to pick only one. In that case, the
-									student should give all the courses in this subset a single
-									colour. There is no restriction on the number of courses that
-									can be grouped under one colour, but it should be noted that
-									every course can get at most 1 colour.<br /> For example, a
+									from which they wish to pick only one. In that case, all the courses in a subset MUST have same color code. There is no restriction on the number of courses that
+									can be grouped under one colour.<br /> For example, a
 									student may have several courses from the Maths department in
 									his preference list, but wants to be allotted at most one of
 									them. He should colour all those courses in the same colour.<br />
 									If you do not wish to give a course any colour, choose the “no
-									colour” option . Among the courses that are with the “no colour
-									option”, a student can get allotted multiple courses, subject
-									to their credit limit.<br /> It should be noted that there is
+									colour” option . “No colour” option indicates that courses under that group are uncoloured, ie, any number of courses can be allotted from the set of courses with “no colour”.
+<br /> It should be noted that there is
 									no need to colour courses in the same slot with a single
 									colour. The SEAT software takes care of slot conflicts.<br />
 									<br />
@@ -390,7 +388,7 @@ aria-expanded="false" aria-controls="collapseTwo8">What are some of the things
 										students should keep in mind when filling preferences?</a></p>
 									<div id="collapseTwo8" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
 									A student will provide his maximum credit limit (including core
-									course credits). This maximum credit limit cannot exceed 60.
+									course credits). This maximum credit limit cannot exceed 63.
 									The student will not be allotted more credits than the maximum
 									credit limit, but it is possible that his credit limit will not
 									be met if the student does not provide a long enough preference
@@ -423,7 +421,7 @@ aria-expanded="false" aria-controls="collapseTwo9">What happens to students who 
 									a 2-step process -- the first step is to drop the course. In
 									the next step, the student can provide a fresh list of
 									preferences, however only on the courses which have vacancies
-									after the first allotment. Note that student is not guaranteed
+									after the first round of allotment. Note that student is not guaranteed
 									to get allotted to a course in the replace and might remain
 									unallotted.<br />
 									<br />
