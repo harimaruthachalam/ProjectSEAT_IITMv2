@@ -18,8 +18,8 @@
     <link href="css/style.css" rel="stylesheet">
 	<style type="text/css">
 		svg > g > g:last-child { pointer-events: none }
-		
-		
+
+
 	</style>
 
 
@@ -31,7 +31,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   animationEnabled: true,
   title:{
     text: "Aggregate allotment for <?php echo $_GET["sem"] ?>"
-  },  
+  },
   axisY: {
     title: "Count",
     titleFontColor: "#4F81BC",
@@ -45,7 +45,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
     lineColor: "#C0504E",
     labelFontColor: "#C0504E",
     tickColor: "#C0504E"
-  },  
+  },
   toolTip: {
     shared: true
   },
@@ -53,26 +53,30 @@ var chart = new CanvasJS.Chart("chartContainer", {
     cursor:"pointer",
     itemclick: toggleDataSeries
   },
+
+  <?php
+  $noOfPref = 0;
+  for ($i = 0; $i < 100; $i++) // Assuming Preference Number goes till 99
+  {
+    if(findCount((string)$i,$_GET["sem"],1) != 0 || findCount((string)$i,$_GET["sem"],2) != 0 || findCount((string)$i,$_GET["sem"],3) != 0)
+    $noOfPref = $i;
+  }
+
+   ?>
   data: [{
     type: "column",
     name: "HS",
     legendText: "HS",
-    showInLegend: true, 
+    showInLegend: true,
     dataPoints:[
-      
-      
-      { label: "1", y: <?php echo findCount("1",$_GET["sem"],1) ?> },
-      { label: "2", y: <?php echo findCount("2",$_GET["sem"],1) ?> },
-      { label: "3", y: <?php echo findCount("3",$_GET["sem"],1) ?> },
-      { label: "4", y: <?php echo findCount("4",$_GET["sem"],1) ?> },
-      { label: "5", y: <?php echo findCount("5",$_GET["sem"],1) ?> },
-      { label: "6", y: <?php echo findCount("6",$_GET["sem"],1) ?> },
-      { label: "7", y: <?php echo findCount("7",$_GET["sem"],1) ?> },
-      { label: "8", y: <?php echo findCount("8",$_GET["sem"],1) ?> },
-      { label: "9", y: <?php echo findCount("9",$_GET["sem"],1) ?>},
-      { label: "10", y:<?php echo findCount("10",$_GET["sem"],1) ?>},
+      <?php
+      for ($i = 1; $i <= $noOfPref; $i++){
+        $noOfStudents = findCount((string)$i,$_GET["sem"],1);
+        echo '{ label: "'.(string)$i.'", y: '.$noOfStudents.'},';
+      }
+      ?>
       { label: "No Course Allotted", y: <?php echo findCount("No Course Allotted",$_GET["sem"],1) ?> }
-      
+
     ]
   },
 
@@ -80,20 +84,14 @@ var chart = new CanvasJS.Chart("chartContainer", {
     type: "column",
     name: "MA",
     legendText: "MA",
-    showInLegend: true, 
+    showInLegend: true,
     dataPoints:[
-     
-      
-      { label: "1", y: <?php echo findCount("1",$_GET["sem"],2) ?> },
-      { label: "2", y: <?php echo findCount("2",$_GET["sem"],2) ?> },
-      { label: "3", y: <?php echo findCount("3",$_GET["sem"],2) ?> },
-      { label: "4", y: <?php echo findCount("4",$_GET["sem"],2) ?> },
-      { label: "5", y: <?php echo findCount("5",$_GET["sem"],2) ?> },
-      { label: "6", y: <?php echo findCount("6",$_GET["sem"],2) ?> },
-      { label: "7", y: <?php echo findCount("7",$_GET["sem"],2) ?> },
-      { label: "8", y: <?php echo findCount("8",$_GET["sem"],2) ?> },
-      { label: "9", y: <?php echo findCount("9",$_GET["sem"],2) ?>},
-      { label: "10", y:<?php echo findCount("10",$_GET["sem"],2) ?>},
+      <?php
+      for ($i = 1; $i <= $noOfPref; $i++){
+        $noOfStudents = findCount((string)$i,$_GET["sem"],2);
+        echo '{ label: "'.(string)$i.'", y: '.$noOfStudents.'},';
+      }
+      ?>
       { label: "No Course Allotted", y: <?php echo findCount("No Course Allotted",$_GET["sem"],2) ?> }
     ]
   },
@@ -101,26 +99,21 @@ var chart = new CanvasJS.Chart("chartContainer", {
   {
     type: "column",
     name: "Proffesional Electives",
-    legendText: "Proffesional Electives",
-    showInLegend: true, 
+    legendText: "Profesional Electives",
+    showInLegend: true,
     dataPoints:[
-      
-      
-      { label: "1", y: <?php echo findCount("1",$_GET["sem"],3) ?> },
-      { label: "2", y: <?php echo findCount("2",$_GET["sem"],3) ?> },
-      { label: "3", y: <?php echo findCount("3",$_GET["sem"],3) ?> },
-      { label: "4", y: <?php echo findCount("4",$_GET["sem"],3) ?> },
-      { label: "5", y: <?php echo findCount("5",$_GET["sem"],3) ?> },
-      { label: "6", y: <?php echo findCount("6",$_GET["sem"],3) ?> },
-      { label: "7", y: <?php echo findCount("7",$_GET["sem"],3) ?> },
-      { label: "8", y: <?php echo findCount("8",$_GET["sem"],3) ?> },
-      { label: "9", y: <?php echo findCount("9",$_GET["sem"],3) ?>},
-      { label: "10", y:<?php echo findCount("10",$_GET["sem"],3) ?>},
+
+        <?php
+        for ($i = 1; $i <= $noOfPref; $i++){
+          $noOfStudents = findCount((string)$i,$_GET["sem"],3);
+          echo '{ label: "'.(string)$i.'", y: '.$noOfStudents.'},';
+        }
+                ?>
       { label: "No Course Allotted", y: <?php echo findCount("No Course Allotted",$_GET["sem"],3) ?> },
-      
+
     ]
   }
-  
+
   ]
 });
 chart.render();
@@ -143,24 +136,23 @@ function toggleDataSeries(e) {
 
 <script>
   function myFunction82() {
-    
+
     if(document.getElementById("mySelect").value.length>0)
     {
     a178 = "statistics.php?sem="+ document.getElementById("mySelect").value;
     window.location.assign(a178);
   }
 
-   
+
 }
   </script>
 
-	
+
 
   </head>
 <body id="page-top">
 
  <?php include 'header.php' ?>
-
 
      <section id="intro" class="bg-light">
        <div class="container">
@@ -198,7 +190,7 @@ for($x = 0; $x < $arrlength; $x++)
 </td>
 </tr>
 <tr colspan="2">
-	<td><div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<td><div id="chartContainer" style="height: 300px; width: 650px; position: relative;"></div>
 </td>
 	</tr>
 </table>
@@ -215,7 +207,7 @@ function drawChart() {
   ['Course', 'Count'],
   ['HS',<?php echo findCount1("HS",$_GET["sem"]) ?>],
   ['MA',<?php echo findCount1("MA",$_GET["sem"]) ?>],
-  ['Proffessional Electives',<?php echo findCount1("Proffessional Electives",$_GET["sem"]) ?>],
+  ['Professional Electives',<?php echo findCount1("Proffessional Electives",$_GET["sem"]) ?>],
 
 ]);
 
@@ -237,7 +229,7 @@ function drawChart() {
     }
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':null, 'width':550, 'height':300, fontSize:16};
+  var options = {'title':null, 'width':650, 'height':300, fontSize:16};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -324,7 +316,7 @@ if (($handle = fopen("agg"."$sem.csv", "r")) !== FALSE)
         fclose($handle);
         return $abc;
        }
-    
+
 
     }
     fclose($handle);
@@ -358,7 +350,7 @@ if (($handle = fopen("agg"."$sem.csv", "r")) !== FALSE)
     <script src="js/scrolling-nav.js"></script>
 
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-   
+
 
 </body>
 </html>
