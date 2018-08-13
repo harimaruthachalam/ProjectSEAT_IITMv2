@@ -169,7 +169,7 @@ function toggleDataSeries(e) {
 <select id="mySelect" onchange="myFunction82()" >
   <option value="">Select a semester</option>
 <?php
-$sems=array("Jan-May 2018 Round 1","Jan-May 2018 Round 2","July-Nov 2017 Round 1","July-Nov 2017 Round 2","Jan-May 2017","July-Nov 2016");
+$sems=array("July-Nov 2018 Round 1","July-Nov 2018 Round 2","Jan-May 2018 Round 1","Jan-May 2018 Round 2","July-Nov 2017 Round 1","July-Nov 2017 Round 2","Jan-May 2017","July-Nov 2016");
 $arrlength = count($sems);
   echo "<br>";
     echo "<br>";
